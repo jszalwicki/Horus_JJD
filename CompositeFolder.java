@@ -1,0 +1,33 @@
+package horusjjd;
+
+import java.util.List;
+
+/**
+ *
+ * @author jszalwicki
+ */
+public class CompositeFolder implements MultiFolder {
+    private final String name;
+    private final String size;
+    private final List<Folder> folders;
+
+    public CompositeFolder(String name, String size, List<Folder> folders) {
+        this.name = name;
+        this.size = size;
+        this.folders = folders;
+    }
+
+    @Override
+    public String getName() { return name; }
+
+    @Override
+    public String getSize() { return size; }
+
+    @Override
+    public List<Folder> getFolders() { return folders; }
+
+    @Override
+    public String toString() {
+        return "MultiFolder{name='%s', size='%s', subFolders=%d}".formatted(name, size, folders.size());
+    }
+}
